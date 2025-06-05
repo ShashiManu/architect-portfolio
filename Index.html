@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Architect Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet"/>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/index.css" />
+</head>
+<body>
+  <div class="section-background">
+  <div
+  class="section-overlay"
+  style="--section-overlay-color: rgb(255, 255, 255)"
+  >
+  <img src="images/logo_nobg.png" alt="Logo" class="overlay-logo" />
+  </div>
+<div class="hamburger" id="hamburger">
+  <div></div><div></div><div></div>
+</div>
+<div class="side-logo">
+    <a href="Index.html">
+        <img src="images/logo_bg.jpg" alt="Logo" />
+    </a>
+</div>
+<!-- Sidebar -->
+<div id="sideNav" class="side-nav">
+  <div class="side-menu-container">
+    <!-- Main menu on the left -->
+    <div class="side-links" id="mainMenu">
+      <a href="#about">About</a>
+      <a href="#services" class="has-submenu" data-menu="services">Services</a>
+      <a href="#portfolio" class="has-submenu" data-menu="portfolio">Portfolio</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <!-- Separator in the center -->
+    <div class="menu-separator" id="menuSeparator"></div>
+    <!-- Submenus on the right -->
+    <div class="submenu" id="submenu-services">
+      <div class="submenu-title">Services</div>
+      <a href="#design">Design</a>
+      <a href="#consulting">Consulting</a>
+      <a href="#planning">Planning</a>
+    </div>
+    <div class="submenu" id="submenu-portfolio">
+      <div class="submenu-title">Portfolio</div>
+      <a href="#residential">Residential</a>
+      <a href="#commercial">Commercial</a>
+      <a href="#interior">Interior</a>
+    </div>
+  </div>
+ 
+</div>
+
+
+  <header id="home">
+    
+    <div class="slideshow">
+      <img src="images/homepage.jpg" class="active" alt="Slide 1">
+      <img src="images/bg.avif" alt="Slide 2">
+    </div>
+    <div class="overlay"></div>
+    <div class="hero-content" data-aos="fade-up">
+      <h1>DESIGNING SPACES, INSPIRING LIVES</h1>
+        <p>Modern architecture portfolio by [Your Name]</p>
+        <a href="Project.html" class="btn">View Projects</a>
+    </div>
+  </div>
+  </header>
+
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="js/index.js"></script>
+</body>
+</html>

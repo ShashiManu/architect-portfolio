@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects | Architect Portfolio</title>
+  <link rel="stylesheet" href="css/project_style.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <nav>
+    <div class="container nav-container">
+      <a href="Index.html" class="logo">
+        <img src="images/logo_nobg.png" alt="Logo" style="width: 50px; height: 50px; z-index: 2; position: relative;" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="about.html">About</a></li>
+        <li><a href="draft projects 1.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <section class="projects-section">
+    <div class="container">
+      <h1>Projects</h1>
+      <div class="filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="residential">Residential</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+        <button class="filter-btn" data-filter="eco">Eco-Friendly</button>
+      </div>
+      <div class="projects-grid">
+        <div class="project-card" data-category="residential">
+          <img src="images/project1.jpg" alt="Modern Villa">
+          <h3>Modern Villa</h3>
+          <button class="modal-btn" data-modal="modal1">View Details</button>
+        </div>
+        <div class="project-card" data-category="commercial">
+          <img src="images/project2.jpg" alt="Urban Loft">
+          <h3>Urban Loft</h3>
+          <button class="modal-btn" data-modal="modal2">View Details</button>
+        </div>
+        <div class="project-card" data-category="eco">
+          <img src="images/project3.jpg" alt="Eco House">
+          <h3>Eco House</h3>
+          <button class="modal-btn" data-modal="modal3">View Details</button>
+        </div>
+      </div>
+    </div>
+    <!-- Modals -->
+    <div class="modal" id="modal1">
+      <div class="modal-content">
+        <span class="close-btn" data-close="modal1">&times;</span>
+        <h2>Modern Villa</h2>
+        <p>Details about the Modern Villa project...</p>
+      </div>
+    </div>
+    <div class="modal" id="modal2">
+      <div class="modal-content">
+        <span class="close-btn" data-close="modal2">&times;</span>
+        <h2>Urban Loft</h2>
+        <p>Details about the Urban Loft project...</p>
+      </div>
+    </div>
+    <div class="modal" id="modal3">
+      <div class="modal-content">
+        <span class="close-btn" data-close="modal3">&times;</span>
+        <h2>Eco House</h2>
+        <p>Details about the Eco House project...</p>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 [Your Name]. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html> 
