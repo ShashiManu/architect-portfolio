@@ -4,32 +4,60 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact | Architect Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <nav>
-    <div class="container nav-container">
-      <a href="index.html" class="logo">ARCHITECT</a>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+<body class="" onload="document.body.classList.add('page-loaded')">
+  <!-- Animation Overlay and Logo -->
+  <div class="section-background">
+    <img src="images/homepage.jpg" alt="Background" class="about-bg-img" />
+    <div class="section-overlay" style="--section-overlay-color: rgb(255,255,255)"></div>
+    <img src="images/logo_nobg.png" alt="Logo" class="overlay-logo" />
+  </div>
+  <!-- Hamburger and Logo -->
+  <div class="hamburger" id="hamburger">
+    <div></div><div></div><div></div>
+  </div>
+  <div class="side-logo">
+    <a href="Index.html">
+      <img src="images/logo_bg.jpg" alt="Logo" />
+    </a>
+  </div>
+  <!-- Sidebar Navigation (copied from about/index) -->
+  <div id="sideNav" class="side-nav">
+    <div class="side-menu-container">
+      <div class="side-links" id="mainMenu">
+        <a href="about.html">About</a>
+        <a href="#services" class="has-submenu" data-menu="services">Services</a>
+        <a href="#portfolio" class="has-submenu" data-menu="portfolio">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="menu-separator" id="menuSeparator"></div>
+      <div class="submenu" id="submenu-services">
+        <div class="submenu-title">Services</div>
+        <a href="#design">Design</a>
+        <a href="#consulting">Consulting</a>
+        <a href="#planning">Planning</a>
+      </div>
+      <div class="submenu" id="submenu-portfolio">
+        <div class="submenu-title">Portfolio</div>
+        <a href="#residential">Residential</a>
+        <a href="#commercial">Commercial</a>
+        <a href="#interior">Interior</a>
+      </div>
     </div>
-  </nav>
-  <section class="contact-section">
-    <div class="container">
-      <h1>Contact</h1>
-      <form class="contact-form">
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name" required>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required>
-        <label for="message">Message</label>
-        <textarea id="message" name="message" rows="5" required></textarea>
-        <button type="submit" class="btn">Send Message</button>
-      </form>
+  </div>
+  <!-- Contact Us Section -->
+  <section class="about-section" style="backdrop-filter: blur(2px); background: rgba(255,255,255,0.85);">
+    <h1>Contact Us</h1>
+    <div class="about-description" style="max-width: 600px; margin: 0 auto 2rem auto; text-align: center;">
+      We're here to connect! Reach out to us using the details below, and our team will be happy to assist you.
+    </div>
+    <div class="contact-details" style="max-width: 500px; margin: 0 auto; background: rgba(255,255,255,0.95); border-radius: 1rem; box-shadow: 0 2px 12px rgba(0,0,0,0.07); padding: 2rem 1.5rem; display: flex; flex-direction: column; gap: 1.2rem; align-items: center;">
+      <div style="font-size: 1.1rem;"><strong>Studio Address:</strong><br>123 Main Street, City Name, Country</div>
+      <div style="font-size: 1.1rem;"><strong>Email:</strong> <a href="mailto:info@the19pistudios.com" style="color: #7a4c4c; text-decoration: underline;">info@the19pistudios.com</a></div>
+      <div style="font-size: 1.1rem;"><strong>Phone:</strong> <a href="tel:+1234567890" style="color: #7a4c4c; text-decoration: underline;">+1 234 567 890</a></div>
+      <div style="font-size: 1.1rem;"><strong>Business Hours:</strong><br>Mon - Fri: 9:00 AM – 6:00 PM</div>
     </div>
   </section>
   <footer>
@@ -38,6 +66,7 @@
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/index.js"></script>
 </body>
 </html> 

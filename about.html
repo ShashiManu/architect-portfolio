@@ -4,38 +4,77 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>About | Architect Portfolio</title>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/index.css">
   <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
 </head>
-<body>
-  <nav>
-    <div class="container nav-container">
-      <a href="index.html" class="logo">ARCHITECT</a>
-      <ul class="nav-links">
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
+<body class="" onload="document.body.classList.add('page-loaded')">
+  <div class="section-background">
+    <img src="images/homepage.jpg" alt="Background" class="about-bg-img" />
+    <div class="section-overlay" style="--section-overlay-color: rgb(255,255,255)"></div>
+    <img src="images/logo_nobg.png" alt="Logo" class="overlay-logo" />
+  </div>
+<div class="hamburger" id="hamburger">
+  <div></div><div></div><div></div>
+</div>
+<div class="side-logo">
+    <a href="Index.html">
+        <img src="images/logo_bg.jpg" alt="Logo" />
+    </a>
+</div>
+<section class="about-section hidden-during-animation">
+  <h1>About Us</h1>
+  <div class="about-description">
+    <span style="font-size: 1.3rem; font-weight: 700; color: #b38e8e;">At the19.pi studios</span>, we believe architecture is a transformative force that shapes not just skylines, but the way people live, work, and connect. Our studio is founded on the principles of innovation, sustainability, and a deep respect for the stories that spaces can tell. <br><br>
+    <b>Our mission</b> is to create environments that inspire, empower, and endure. We approach every project as a unique opportunity to blend creativity with functionality, ensuring that each design is both visionary and practical. <br><br>
+    <b>Founded by two passionate architects</b> from a world-renowned design institution, the19.pi studios has grown from a shared dream into a collaborative practice known for its attention to detail, contextual sensitivity, and bold ideas. Our journey began with late-night sketches and a vision to reimagine everyday spaces with clarity, purpose, and soul. Today, we continue to push boundaries, working closely with clients to deliver spaces that are as meaningful as they are beautiful.<br><br>
+    <b>What sets us apart?</b> Our commitment to listening. We believe the best designs emerge from dialogue—between architect and client, form and function, past and future. Whether it's a modern residence, a commercial hub, or a community space, we strive to craft experiences that resonate and endure.
+  </div>
+  <div class="about-grid">
+    
+</section>
+  <div id="sideNav" class="side-nav">
+    <div class="side-menu-container">
+      <!-- Main menu on the left -->
+      <div class="side-links" id="mainMenu">
+        <a href="index.html">Home</a>
+        <a href="#services" class="has-submenu" data-menu="services">Services</a>
+        <a href="#portfolio" class="has-submenu" data-menu="portfolio">Portfolio</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <!-- Separator in the center -->
+      <div class="menu-separator" id="menuSeparator"></div>
+      <!-- Submenus on the right -->
+      <div class="submenu" id="submenu-services">
+        <div class="submenu-title">Services</div>
+        <a href="#design">Design</a>
+        <a href="#consulting">Consulting</a>
+        <a href="#planning">Planning</a>
+      </div>
+      <div class="submenu" id="submenu-portfolio">
+        <div class="submenu-title">Portfolio</div>
+        <a href="#residential">Residential</a>
+        <a href="#commercial">Commercial</a>
+        <a href="#interior">Interior</a>
+      </div>
     </div>
-  </nav>
-  <section class="about-section">
-    <div class="container">
-      <h1>About Me</h1>
-      <p>Hello! I'm [Your Name], an architect passionate about creating inspiring and functional spaces. With a focus on modern design and sustainability, I bring visions to life through innovative solutions and attention to detail.</p>
-      <h2>Experience</h2>
-      <ul>
-        <li>10+ years in residential and commercial architecture</li>
-        <li>Award-winning designs featured in top magazines</li>
-        <li>Expertise in sustainable and eco-friendly projects</li>
-      </ul>
-    </div>
-  </section>
+   
+    
   <footer>
     <div class="container">
       <p>&copy; 2024 [Your Name]. All rights reserved.</p>
     </div>
   </footer>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-  <script src="js/main.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/index.js"></script>
+  <script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      document.querySelectorAll('.hidden-during-animation').forEach(function(el) {
+        el.classList.remove('hidden-during-animation');
+      });
+    }, 1300); // Match the animation duration
+  });
+  </script>
 </body>
 </html> 
