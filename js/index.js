@@ -14,9 +14,19 @@ const sideNav = document.getElementById("sideNav");
 const hamburger = document.getElementById("hamburger");
 const mainMenu = document.getElementById('mainMenu');
 const menuSeparator = document.getElementById('menuSeparator');
+
+
 window.addEventListener("load", function () {
   document.body.classList.add("page-loaded");
+  
+  // Show content after animation
+  setTimeout(() => {
+    document.querySelectorAll('.hidden-during-animation').forEach(function(el) {
+      el.classList.remove('hidden-during-animation');
+    });
+  }, 1000);
 });
+
 hamburger.onclick = function() {
   const isOpen = sideNav.classList.toggle("open");
   hamburger.classList.toggle("active", isOpen);
@@ -41,7 +51,7 @@ document.querySelectorAll('.has-submenu').forEach(link => {
   });
 });
 
-// Hide submenu and reset menu on main link click
+/* Hide submenu and reset menu on main link click
 document.querySelectorAll('.side-links a:not(.has-submenu)').forEach(link => {
   link.addEventListener('click', function() {
     document.querySelectorAll('.submenu').forEach(s => s.classList.remove('active'));
@@ -62,3 +72,69 @@ document.querySelectorAll('.side-links a:not(.has-submenu)').forEach(link => {
         }, 1300); // Slightly longer to allow full fade
     }, 1000); // Delay before start
     });
+
+document.addEventListener("DOMContentLoaded", function() {
+  function animateCounter(counter) {
+    const target = +counter.getAttribute('data-target');
+    const speed = 200; // lower is faster
+    const increment = Math.ceil(target / speed);
+    let current = 0;
+    function updateCounter() {
+      current += increment;
+      if (current > target) current = target;
+      counter.textContent = current;
+      if (current < target) {
+        requestAnimationFrame(updateCounter);
+      }
+    }
+    updateCounter();
+  }
+  document.querySelectorAll('.counter-number').forEach(counter => {
+    animateCounter(counter);
+  });
+});
+*/
+
+/* Image Slider Section */
+// Initialize slider immediately
+jQuery(document).ready(function($) {
+  if ($(".property-slide").length) {
+    $(".property-slide").slick({
+      dots: false,
+      infinite: true,
+      speed: 300,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      arrows: true,
+      autoplay: true,
+      autoplaySpeed: 6000,
+      prevArrow:
+        '<button class="slick-prev fa-solid fa-arrow-left" aria-label="Prev"></button>',
+      nextArrow:
+        '<button class="slick-next fa-solid fa-arrow-right" aria-label="Next"></button>',
+      responsive: [
+        {
+          breakpoint: 992,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 600,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+      ]
+    });
+  }
+});
