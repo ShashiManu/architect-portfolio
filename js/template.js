@@ -127,8 +127,15 @@ class DynamicGallery {
                 this.projectData = {
                     title: title,
                     description: description,
-                    key: projectKey
+                    key: projectKey,
+                    heroImage: `./projects/${projectKey}/hero.jpg` // Default hero image path
                 };
+                
+                // Check if hero image exists, if not use a default one
+                const heroExists = await this.checkImageExists(this.projectData.heroImage);
+                if (!heroExists) {
+                    this.projectData.heroImage = 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80';
+                }
                 
                 this.updateProjectInfo();
             } else {
@@ -139,7 +146,8 @@ class DynamicGallery {
             this.projectData = {
                 title: `Project ${projectKey}`,
                 description: 'No description available.',
-                key: projectKey
+                key: projectKey,
+                heroImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
             };
             this.updateProjectInfo();
         }
@@ -220,8 +228,13 @@ class DynamicGallery {
     updateProjectInfo() {
         this.projectTitle.textContent = this.projectData.title;
         this.projectDescription.textContent = this.projectData.description;
-        this.breadcrumbTitle.textContent = this.projectData.title;
         document.title = `${this.projectData.title} - Architecture Portfolio`;
+        
+        // Update hero background image
+        const heroSection = document.querySelector('.hero');
+        if (heroSection) {
+            heroSection.style.backgroundImage = `url('${this.projectData.heroImage}')`;
+        }
     }
 
     renderGallery() {

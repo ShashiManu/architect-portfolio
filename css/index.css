@@ -626,7 +626,7 @@ a:focus {
   /* background: rgba(255, 255, 255, 0.9); */
   border-radius: 8px;
   margin: 2rem auto;
-  max-width: 1500px;
+  max-width: 90%;
   /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
 }
 
