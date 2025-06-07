@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Architecture Portfolio</title>
+    <link rel="stylesheet" href="css/template.css">
+</head>
+<body>
+
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        
+        <div class="hero-content">
+            <h1 id="projectTitle">Loading...</h1>
+            <p id="projectDescription">Please wait while we load the project details...</p>
+        </div>
+       
+
+        <div class="breadcrumb">
+                       
+            
+            <!-- <a href="#home">Home</a>
+            <a href="#portfolio">Portfolio</a> -->
+            <a href="#single" id="breadcrumbTitle">Project</a>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div id="galleryContainer">
+            <div class="loading-container">
+                <div class="loading"></div>
+                <div class="loading-text">Loading images...</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fullscreen Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <img class="modal-image" id="modalImage" src="" alt="">
+            <button class="modal-nav prev" id="prevBtn">‹</button>
+            <button class="modal-nav next" id="nextBtn">›</button>
+            <button class="close" id="closeBtn">×</button>
+            <div class="image-counter" id="imageCounter"></div>
+            <div class="image-info" id="imageInfo">
+                <h3 id="modalImageTitle"></h3>
+                <p id="modalImageDescription"></p>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="js/template.js"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</html>

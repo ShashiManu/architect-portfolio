@@ -1,0 +1,52 @@
+[
+    {
+      "filename": "image1.jpg",
+      "title": "Living Room",
+      "description": "Living room with vast space"
+    },
+    {
+      "filename": "image2.jpg",
+       "title": "Living Room",
+      "description": "Living room with vast space"
+    },
+    {
+      "filename": "image3.jpg",
+      "title": "Dining",
+      "description": "Furnished dining area"
+    },
+    {
+      "filename": "image4.jpg",
+      "title": "Dining",
+      "description": "Dining - Sit Out"
+    },
+    {
+      "filename": "image5.jpg",
+      "title": "Kitchen",
+      "description": ""
+    },
+    {
+      "filename": "image6.jpg",
+      "title": "Master Bedroom",
+      "description": ""
+    },
+    {
+      "filename": "image7.jpg",
+      "title": "Master Bedroom",
+      "description": "Master bedroom walk-in"
+    },
+    {
+      "filename": "image8.jpg",
+      "title": "Bathroom",
+      "description": ""
+    },
+    {
+      "filename": "image9.jpg",
+      "title": "Bedroom",
+      "description": ""
+    },
+    {
+      "filename": "image10.jpg",
+      "title": "Bedroom",
+      "description": ""
+    }
+  ]

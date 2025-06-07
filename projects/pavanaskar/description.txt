@@ -1,0 +1,2 @@
+"Project Pavanaskar"
+This is the project description that will appear in the hero section. You can write multiple lines and they will be combined into the description paragraph.
