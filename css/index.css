@@ -19,8 +19,8 @@
       content: "";
       position: fixed;
       top: 0;
-      left: 33.35%;
-      width: 33.35%;
+      left: 33.3%;
+      width: 33.4%;
       height: 100%;
       background: var(--section-overlay-color, #ffffff);
       pointer-events: none;
