@@ -19,8 +19,8 @@
       content: "";
       position: fixed;
       top: 0;
-      left: 33.33%;
-      width: 33.33%;
+      left: 33.35%;
+      width: 33.35%;
       height: 100%;
       background: var(--section-overlay-color, #ffffff);
       pointer-events: none;
@@ -543,7 +543,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  /* height: 100vh; */
+  height: 100vh;
   object-fit: cover;
   z-index:-2;
   filter: blur(8px) brightness(0.85);
@@ -554,7 +554,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  /* height: 100vh; */
+  height: 100vh;
   z-index: 0;
   overflow: hidden;
 }
