@@ -1,11 +1,11 @@
     AOS.init();
 
-    // Sidebar open/close
+    // Get DOM elements
 const sideNav = document.getElementById("sideNav");
 const hamburger = document.getElementById("hamburger");
+const closeBtn = document.getElementById("closeBtn");
 const mainMenu = document.getElementById('mainMenu');
 const menuSeparator = document.getElementById('menuSeparator');
-
 
 window.addEventListener("load", function () {
   document.body.classList.add("page-loaded");
@@ -18,15 +18,26 @@ window.addEventListener("load", function () {
   }, 1000);
 });
 
-hamburger.onclick = function() {
-  const isOpen = sideNav.classList.toggle("open");
-  hamburger.classList.toggle("active", isOpen);
-  // Hide all submenus when opening/closing
-  document.querySelectorAll('.submenu').forEach(s => s.classList.remove('active'));
-  mainMenu.classList.remove('shifted');
-  menuSeparator.classList.remove('active');
-};
+// Add event listeners when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+  // Hamburger click handler
+  if (hamburger) {
+    hamburger.addEventListener('click', function(e) {
+      e.preventDefault();
+      sideNav.classList.add("open");
+    });
+  }
 
+  // Close button click handler
+  if (closeBtn) {
+    closeBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      sideNav.classList.remove("open");
+    });
+  }
+});
+
+// Handle submenu clicks
 document.querySelectorAll('.has-submenu').forEach(link => {
   link.addEventListener('click', function(e) {
     e.preventDefault();

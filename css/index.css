@@ -122,21 +122,22 @@
     /* --- Sidebar Glassmorphism & Animation --- */
   .side-nav {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
   background: linear-gradient(135deg, rgba(54, 54, 54, 0.3), rgba(54, 54, 54, 0.3));
-  backdrop-filter: blur(28px); /* Strong blur */
+  backdrop-filter: blur(28px);
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Add this */
-  align-items: center;     /* Add this */
-  z-index: 100;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
   opacity: 0;
-  transform: translateX(-60px);
+  transform: translateX(-100%);
   pointer-events: none;
-  transition: opacity 0.4s, transform 0.4s;
+  transition: all 0.4s ease;
   padding: 0;
 }
 
@@ -758,4 +759,31 @@ a:focus {
 
 .property-item a:hover .property-details {
   opacity: 1;
+}
+
+.close-btn {
+  position: fixed;
+  top: 30px;
+  right: 40px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2.5rem;
+  cursor: pointer;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+  z-index: 2001;
+  pointer-events: auto;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.side-nav.open .close-btn {
+  opacity: 1;
+  visibility: visible;
+}
+
+.close-btn:hover {
+  transform: scale(1.1);
+  color: #ffffff;
 }
