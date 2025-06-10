@@ -53,6 +53,7 @@ document.querySelectorAll('.has-submenu').forEach(link => {
   });
 });
 
+
 /* Hide submenu and reset menu on main link click
 document.querySelectorAll('.side-links a:not(.has-submenu)').forEach(link => {
   link.addEventListener('click', function() {
