@@ -657,6 +657,7 @@ a:focus {
   display: inline-block;
   vertical-align: middle;
   width: calc(100% / 3);
+  height: 538px;
   padding: 0 7px;
 }
 
@@ -737,8 +738,8 @@ a:focus {
 
 .property-img img {
   display: inline-block;
-  width: 100%;
-  height: auto;
+  width: 619px;
+  height: 412px;
 }
 
 .property-details {
