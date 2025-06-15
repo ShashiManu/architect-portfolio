@@ -122,22 +122,21 @@
     /* --- Sidebar Glassmorphism & Animation --- */
   .side-nav {
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100vw;
   height: 100vh;
-  background: linear-gradient(135deg, rgba(54, 54, 54, 0.3), rgba(54, 54, 54, 0.3));
-  backdrop-filter: blur(28px);
+  background: linear-gradient(135deg, rgba(54, 54, 54, 0.7), rgba(54, 54, 54, 0.7));
+  backdrop-filter: blur(28px); /* Strong blur */
   color: white;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 1000;
+  justify-content: center; /* Add this */
+  align-items: center;     /* Add this */
+  z-index: 100;
   opacity: 0;
-  transform: translateX(-100%);
+  transform: translateX(-60px);
   pointer-events: none;
-  transition: all 0.4s ease;
+  transition: opacity 0.4s, transform 0.4s;
   padding: 0;
 }
 
@@ -192,7 +191,7 @@
 .side-links a {
   color: rgb(174, 174, 174);
   text-decoration: none;
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   margin: 10px 0;
   transition: color 0.3s;
   padding: 8px 0;
@@ -763,12 +762,12 @@ a:focus {
 
 .close-btn {
   position: fixed;
-  top: 30px;
+  top: 40px;
   right: 40px;
   background: none;
   border: none;
   color: white;
-  font-size: 2.5rem;
+  font-size: 2rem;
   cursor: pointer;
   padding: 5px 10px;
   transition: all 0.3s ease;
@@ -786,4 +785,40 @@ a:focus {
 .close-btn:hover {
   transform: scale(1.1);
   color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  margin: 2rem 0 1rem 0;
+  padding: 0;
+  list-style: none;
+}
+.social-icons li {
+  display: inline-block;
+}
+.social-icons a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #222;
+  color: #fff;
+  font-size: 1.5rem;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+}
+.social-icons a:hover {
+  background: #5d923d;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+.slick-invisible {
+  visibility: hidden;
+}
+.slick-initialized {
+  visibility: visible !important;
 }

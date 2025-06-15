@@ -99,11 +99,13 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     text-align: center;
     color: white;
     position: relative;
+    padding-top: 70px;
 }
 
 .hero::before {
@@ -122,6 +124,7 @@ body {
     z-index: 2;
     padding: 2rem;
     max-width: 800px;
+    margin-bottom: 20px;
 }
 
 .hero-content h1 {
@@ -149,17 +152,56 @@ body {
     line-height: 1.6;
 }
 
+/* Project Details */
+.project-details {
+    position: relative;
+    z-index: 2;
+    text-align: left;
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.75);
+    border-radius: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.detail-item:last-child {
+    margin-bottom: 0;
+}
+
+.detail-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    filter: invert(1);
+}
+
+.detail-label {
+    font-weight: bold;
+    margin-right: 5px;
+    color: white;
+}
+
+.project-details span {
+    color: white;
+}
+
 /* Breadcrumb */
 .breadcrumb {
-    position: absolute;
-    top: 50%;
-    right: 2rem;
-    transform: translateY(-50%);
-    display: flex;
-    gap: 1rem;
-    font-size: 0.8rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
+    position: relative;
+    z-index: 2;
+    margin-top: 20px;
+    right: auto;
+    top: auto;
+    transform: none;
 }
 
 .breadcrumb a {

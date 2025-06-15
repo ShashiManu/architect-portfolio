@@ -14,6 +14,14 @@ class DynamicGallery {
         this.projectDescription = document.getElementById('projectDescription');
         this.breadcrumbTitle = document.getElementById('breadcrumbTitle');
         
+        // New elements for project details
+        this.architects = document.getElementById('architects');
+        this.area = document.getElementById('area');
+        this.year = document.getElementById('year');
+        this.photographs = document.getElementById('photographs');
+        this.manufacturers = document.getElementById('manufacturers');
+        this.leadArchitects = document.getElementById('leadArchitects');
+        
         this.currentIndex = 0;
         this.images = [];
         this.projectData = null;
@@ -113,22 +121,25 @@ class DynamicGallery {
         }
     }
 
-    // Load project description from .txt file
+    // Load project description from .json file
     async loadProjectDescription(projectKey) {
         try {
-            const response = await fetch(`./projects/${projectKey}/description.txt`);
+            const response = await fetch(`./projects/${projectKey}/description.json`);
             if (response.ok) {
                 const text = await response.text();
-                const lines = text.split('\n').filter(line => line.trim());
-                
-                const title = lines[0] || `Project ${projectKey}`;
-                const description = lines.slice(1).join(' ') || 'No description available.';
+                const data = JSON.parse(text);
                 
                 this.projectData = {
-                    title: title,
-                    description: description,
+                    title: data.title || `Project ${projectKey}`,
+                    description: data.description || 'No description available.',
                     key: projectKey,
-                    heroImage: `./projects/${projectKey}/hero.jpg` // Default hero image path
+                    heroImage: data.heroImage || `./projects/${projectKey}/hero.jpg`,
+                    architects: data.architects || 'N/A',
+                    area: data.area || 'N/A',
+                    year: data.year || 'N/A',
+                    photographs: data.photographs || 'N/A',
+                    manufacturers: data.manufacturers || 'N/A',
+                    leadArchitects: data.leadArchitects || 'N/A'
                 };
                 
                 // Check if hero image exists, if not use a default one
@@ -139,15 +150,21 @@ class DynamicGallery {
                 
                 this.updateProjectInfo();
             } else {
-                throw new Error('Description file not found');
+                throw new Error('Description JSON file not found');
             }
         } catch (error) {
-            console.warn('Could not load description:', error);
+            console.warn('Could not load description or parse JSON:', error);
             this.projectData = {
                 title: `Project ${projectKey}`,
                 description: 'No description available.',
                 key: projectKey,
-                heroImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80'
+                heroImage: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80',
+                architects: 'N/A',
+                area: 'N/A',
+                year: 'N/A',
+                photographs: 'N/A',
+                manufacturers: 'N/A',
+                leadArchitects: 'N/A'
             };
             this.updateProjectInfo();
         }
@@ -230,6 +247,14 @@ class DynamicGallery {
         this.projectDescription.textContent = this.projectData.description;
         document.title = `${this.projectData.title} - Architecture Portfolio`;
         
+        // Update new project info fields
+        this.architects.textContent = this.projectData.architects;
+        this.area.textContent = this.projectData.area;
+        this.year.textContent = this.projectData.year;
+        this.photographs.textContent = this.projectData.photographs;
+        this.manufacturers.textContent = this.projectData.manufacturers;
+        this.leadArchitects.textContent = this.projectData.leadArchitects;
+
         // Update hero background image
         const heroSection = document.querySelector('.hero');
         if (heroSection) {
