@@ -680,11 +680,12 @@ a:focus {
   transform: translateY(-40px);
   border: none;
   outline: none;
+  color: #ffffff
 }
 
 .property-slide button:before {
   font-family: inherit !important;
-  color: #000 !important;
+  color: #ffffff !important;
   font-size: 30px;
 }
 .property-slide button.slick-prev {
